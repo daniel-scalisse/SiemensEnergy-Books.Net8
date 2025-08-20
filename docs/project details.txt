@@ -1,0 +1,81 @@
+--> Detalhes do que foi entregue
+
+- Projeto back-end em 3 camadas, Business, Data e API.
+- Front-end em Angular 8. Não é a mais recente, mas a que tenho conhecimento atualmente.
+
+--> Tecnologias usadas
+
+-> Back end
+
+- Visual Studio Community 2022
+- Dot.Net 8
+- ASP.Net 8
+- Entity Framework Core 8
+- MSSQL Server Developer 2022
+
+-> Front end
+- Visual Studio Code 1.103.1
+- Angular CLI 8.3.29
+
+-----------------------------------------------------------------------------------
+
+--> API
+
+-> Migrations
+
+> Identity
+
+Marque o projeto API como startup ou informe o parâmetro -StartupProject Books_Api.
+
+Comandos:
+Add-Migration Identity -Context ApplicationDbContext -Project Books_Api
+Update-Database Identity -Context ApplicationDbContext -Project Books_Api
+
+-----------------------------------------------------------------------------------
+
+--> Data
+
+-> Migration
+
+Comandos:
+Add-Migration Initial -Context BooksDbContext -Project Books_Data
+Update-Database Initial -Context BooksDbContext -Project Books_Data
+
+
+-----------------------------------------------------------------------------------
+
+--> Testes com xUnit
+
+Install-Package xUnit
+Install-Package xUnit.Runner.VisualStudio
+
+-> Bogus para dados aleatórios
+
+Ajuda a gerar dados aleatórios próximos da realidade.
+
+Install-Package Bogus (precisa selecionar o projeto)
+ou
+Install-Package Bogus -ProjectName Books_Business_Tests
+
+-> Mock para injeção de dependência
+
+Usado para fingir um objeto, resolvendo injeções de dependência.
+O método Setup do mock ensina o método testado a retornar algo, sem se preocupar com o acesso 
+ao banco de dados, ao mediator, ou qualquer outro meio envolvido.
+Testa o retorno do método e não como conseguiu os dados.
+
+Install-Package Moq
+
+-> AutoMock
+
+Ajuda a escrever testes com menos código, automatizando o mock, em cenários com muitas injeções 
+de dependência.
+
+Install-Package Moq.AutoMock
+
+
+-> Fluent Assertions
+
+A idéia é substituir os asserts tradicionais de forma mais legível.
+
+Install-Package FluentAssertions

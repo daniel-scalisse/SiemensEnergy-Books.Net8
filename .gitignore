@@ -1,0 +1,10 @@
+.vs/
+bin/
+obj/
+packages/
+*.nupkg
+*.suo
+*.user
+*.log
+*.tmp
+*.csproj.user

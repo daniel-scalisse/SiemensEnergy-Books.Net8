@@ -65,7 +65,7 @@ namespace Books_Business.Modules.Genders
 
             if (current.Count() == 0) return false;
 
-            Notify("There is already an Gender with that name!");
+            Notify("There is already a Gender with that Name!");
 
             return true;
         }

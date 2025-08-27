@@ -65,7 +65,7 @@ namespace Books_Business.Modules.Authors
 
             if (current.Count() == 0) return false;
 
-            Notify("There is already an Author with that name!");
+            Notify("There is already an Author with that Name!");
 
             return true;
         }

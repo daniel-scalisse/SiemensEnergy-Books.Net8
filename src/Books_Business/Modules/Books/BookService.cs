@@ -75,13 +75,13 @@ namespace Books_Business.Modules.Books
             switch (fields.Count)
             {
                 case 1:
-                    Notify($"There is already an Gender with that {fields[0]}!");
+                    Notify($"There is already a Book with that {fields[0]}!");
                     break;
                 case 2:
-                    Notify($"There is already an Gender with that {fields[0]} and {fields[1]}!");
+                    Notify($"There is already a Book with that {fields[0]} and {fields[1]}!");
                     break;
                 case 3:
-                    Notify($"There is already an Gender with that {fields[0]}, {fields[1]} and {fields[2]}!");
+                    Notify($"There is already a Book with that {fields[0]}, {fields[1]} and {fields[2]}!");
                     break;
             }
 

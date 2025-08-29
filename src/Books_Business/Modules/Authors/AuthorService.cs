@@ -27,7 +27,7 @@ namespace Books_Business.Modules.Authors
         {
             if (!entity.IsValid()) return false;
 
-            if (await Existente(entity)) return false;
+            if (await Exists(entity)) return false;
 
             await _repository.Add(entity);
 
@@ -38,7 +38,7 @@ namespace Books_Business.Modules.Authors
         {
             if (!Validate(new AuthorValidation(), entity)) return false;
 
-            if (await Existente(entity)) return false;
+            if (await Exists(entity)) return false;
 
             await _repository.Update(entity);
 
@@ -59,7 +59,7 @@ namespace Books_Business.Modules.Authors
             return true;
         }
 
-        private async Task<bool> Existente(Author entity)
+        private async Task<bool> Exists(Author entity)
         {
             var current = await _repository.Search(a => a.Name == entity.Name && a.Id != entity.Id);
 

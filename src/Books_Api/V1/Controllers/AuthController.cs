@@ -40,7 +40,7 @@ namespace Books_Api.V1.Controllers
 
         //[EnableCors("Development")]
         [HttpPost("new-account")]
-        public async Task<ActionResult> Registrar(RegisterUserViewModel registerUser)
+        public async Task<ActionResult> Register(RegisterUserViewModel registerUser)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 

@@ -74,16 +74,16 @@ namespace Books_Api.V1.Controllers
 
             if (result.Succeeded)
             {
-                _logger.LogInformation("Usuario " + loginUser.Email + " logado com sucesso");
+                _logger.LogInformation("User " + loginUser.Email + " logged in successfully");
                 return CustomResponse(await GerarJwt(loginUser.Email));
             }
             if (result.IsLockedOut)
             {
-                NotifyError("Usuário temporariamente bloqueado por tentativas inválidas");
+                NotifyError("User temporarily blocked due to invalid attempts");
                 return CustomResponse(loginUser);
             }
 
-            NotifyError("Usuário ou Senha incorretos");
+            NotifyError("Incorrect username or password");
             return CustomResponse(loginUser);
         }
 

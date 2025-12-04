@@ -5,26 +5,26 @@ namespace Books_Api.ViewModels
 {
     public class RegisterUserViewModel
     {
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
+        [Required(ErrorMessage = "The {0} field is required")]
+        [EmailAddress(ErrorMessage = "The {0} field is in an invalid format.")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 6)]
+        [Required(ErrorMessage = "The {0} field is required")]
+        [StringLength(100, ErrorMessage = "The {0} field must be between {2} and {1} characters", MinimumLength = 6)]
         public string Password { get; set; }
 
-        [Compare("Password", ErrorMessage = "As senhas não conferem.")]
+        [Compare("Password", ErrorMessage = "The passwords don't match.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginUserViewModel
     {
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
+        [Required(ErrorMessage = "The {0} field is required")]
+        [EmailAddress(ErrorMessage = "The {0} field is in an invalid format.")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 6)]
+        [Required(ErrorMessage = "The {0} field is required")]
+        [StringLength(100, ErrorMessage = "The {0} field must be between {2} and {1} characters", MinimumLength = 6)]
         public string Password { get; set; }
     }
 
